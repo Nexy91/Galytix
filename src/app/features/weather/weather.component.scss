@@ -88,6 +88,7 @@ body {
     position: absolute;
     top: 25px;
     left: 25px;
+    color: $back-color;
   }
   
   .date-dayname {
@@ -157,6 +158,11 @@ body {
   .today-info>div .value {
     float: right;
   }
+
+  .week-container{
+    padding-left: 30px;
+    padding-right: 25px;
+  }
   
   .week-list {
     list-style-type: none;
@@ -165,7 +171,6 @@ body {
     -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
             box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    // background: #
   }
   
   .week-list>li {
