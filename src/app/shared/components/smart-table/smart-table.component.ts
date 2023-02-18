@@ -34,7 +34,9 @@ export class SmartTableComponent implements OnInit {
   }
 
   public selected(row: any): void {
-    this.rowSelected.emit(row);
+    if (row) {
+      this.rowSelected.emit(row);
+    }
   }
 
   private setColumns(): void {

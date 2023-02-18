@@ -1,4 +1,3 @@
-import { GetCountries } from '@app/features/countries/store/countries.actions';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 
@@ -10,9 +9,7 @@ import { Store } from '@ngxs/store';
 export class HomeComponent implements OnInit {
   constructor(private _store: Store) {}
 
-  public ngOnInit(): void {
-    this._store.dispatch(new GetCountries());
-  }
+  public ngOnInit(): void {}
 
   public ngOnDestroy(): void {}
 }

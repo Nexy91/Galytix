@@ -1,4 +1,4 @@
-import { SelectCountry } from '@app/features/countries/store/countries.actions';
+import { GetCountries, SelectCountry } from '@app/features/countries/store/countries.actions';
 import { CountriesState } from '@app/features/countries/store/countries.state';
 import { GetWeather } from '@app/features/weather/store/weather.actions';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -6,6 +6,7 @@ import { ICountry } from './interfaces/country.interface';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { Columns } from 'ngx-easy-table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-countries',
@@ -19,9 +20,11 @@ export class CountriesComponent implements OnInit, OnDestroy {
   public countriesDB: ICountry[] = [];
   public columns: Columns[] = [];
 
-  constructor(private _store: Store) {}
+  constructor(private _store: Store, private _router: Router) {}
 
   public ngOnInit(): void {
+    this._store.dispatch(new GetCountries());
+
     // This is just example to show subscription on selector. Observable can be pass true .html with async pipe as well.
     this.countries$?.pipe(takeUntil(this.destroy$)).subscribe((x: ICountry[]) => {
       this.countriesDB = x;
@@ -51,5 +54,6 @@ export class CountriesComponent implements OnInit, OnDestroy {
   public rowSelected(country: ICountry): void {
     this._store.dispatch(new SelectCountry(country));
     this._store.dispatch(new GetWeather(country.country));
+    this._router.navigate(['weather']);
   }
 }
