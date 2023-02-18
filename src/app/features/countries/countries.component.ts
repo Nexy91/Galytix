@@ -1,10 +1,11 @@
-import { SelectCountry } from '@app/shared/store/countries.actions';
-import { CountriesState } from '@app/shared/store/countries.state';
+import { SelectCountry } from '@app/shared/store/countries/countries.actions';
+import { CountriesState } from '@app/shared/store/countries/countries.state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ICountry } from './interfaces/country.interface';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { Columns } from 'ngx-easy-table';
+import { GetWeather } from '@app/shared/store/weather/weather.actions';
 
 @Component({
   selector: 'app-countries',
@@ -49,5 +50,6 @@ export class CountriesComponent implements OnInit, OnDestroy {
 
   public rowSelected(country: ICountry): void {
     this._store.dispatch(new SelectCountry(country));
+    this._store.dispatch(new GetWeather(country.country));
   }
 }

@@ -10,8 +10,9 @@ import { NgModule } from '@angular/core';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { CountriesState } from './shared/store/countries.state';
+import { CountriesState } from './shared/store/countries/countries.state';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherState } from './shared/store/weather/weather.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
 
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsModule.forRoot([CountriesState]),
+    NgxsModule.forRoot([CountriesState, WeatherState]),
     NgxsLoggerPluginModule.forRoot({
       disabled: !environment.ngsxLogging,
     }),

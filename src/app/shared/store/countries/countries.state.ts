@@ -1,5 +1,5 @@
-import { CountriesApiService } from '@app/features/countries/services/api.service';
-import { ICountry } from '../../features/countries/interfaces/country.interface';
+import { CountriesApiService } from '@app/features/countries/services/country-api.service';
+import { ICountry } from '../../../features/countries/interfaces/country.interface';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { GetCountries, SelectCountry } from './countries.actions';
 import { Injectable } from '@angular/core';

@@ -1,4 +1,4 @@
-import { GetCountries } from '@app/shared/store/countries.actions';
+import { GetCountries } from '@app/shared/store/countries/countries.actions';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 
