@@ -1,0 +1,7 @@
+<ng-container *ngIf="configuration">
+      <ngx-table [configuration]="configuration"
+      [data]="data"
+      [columns]="columns"
+      (event)="rowSelected($event.value.row)">
+    </ngx-table>
+</ng-container>

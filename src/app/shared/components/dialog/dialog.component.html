@@ -1,0 +1,13 @@
+<div *ngIf="showDialog" class="wrapper dialog-fade-in" [ngClass]="closeTrigger ? 'dialog-fade-out' : ''">
+  <div class="dialog dialog-scale-in-center" [ngClass]="closeTrigger ? 'dialog-scale-out-center' : ''"
+    [style.width]="width" [style.height]="height" [style.minWidth]="minWidth" [style.minHeight]="minWidth"
+    [style.maxWidth]="maxWidth" [style.maxHeight]="maxHeight">
+
+    <div *ngIf="close" class="close" (click)="closeDialogStart();">
+      <button class="dialog-rotate-center">✖</button>
+    </div>
+
+    <h2 *ngIf="title" [ngClass]="close ? 'extra-space' : ''">{{title | translate}}</h2>
+    <ng-content></ng-content>
+  </div>
+</div>

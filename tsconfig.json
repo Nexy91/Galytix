@@ -1,0 +1,66 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      // App
+      "@app/*": ["src/app/*"],
+      "@styles/*": ["src/styles/*"],
+      "@assets/*": ["src/assets/*"],
+      "@environments/*": ["src/environments/*"],
+
+      // Fundamentals
+      "@core/*": ["src/app/core/*"],
+      "@features/*": ["src/app/features/*"],
+      "@shared/*": ["src/app/shared/*"],
+      
+      // Core
+      "@coreComponents/*": ["src/app/core/components/*"],
+      "@config/*": ["src/app/core/config/*"],
+      "@constants/*": ["src/app/core/constants/*"],
+      "@enums/*": ["src/app/core/enums/*"],
+      "@extensions/*": ["src/app/core/extensions/*"],
+      "guards/*": ["src/app/core/guards/*"],
+      "@interceptor/*": ["src/app/core/interceptor/*"],
+      "@routing/*": ["src/app/core/routing/*"],
+      "@utils/*": ["src/app/core/utils/*"],
+      "@store/*": ["src/app/core/store/*"],
+
+      // Shared
+      "@shareComponents/*": ["src/app/shared/components/*"],
+      "@directives/*": ["src/app/shared/directives/*"],
+      "@models/*": ["src/app/shared/models/*"],
+      "@modules/*": ["src/app/shared/modules/*"],
+      "@pipes/*": ["src/app/shared/pipes/*"],
+      "@resources/*": ["src/app/shared/resources/*"],
+      "@services/*": ["src/app/shared/services/*"],
+    },
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
