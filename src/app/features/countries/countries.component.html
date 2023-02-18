@@ -1,5 +1,9 @@
-<smart-table 
-  [data]="countriesDB" 
-  [columns]="columns"
-  (rowSelected)="rowSelected($event);">
-</smart-table>
+<div class="wrapper fade-in">
+  <div class="table-container">
+    <smart-table
+      [data]="countriesDB" 
+      [columns]="columns"
+      (rowSelected)="rowSelected($event);">
+    </smart-table>
+  </div>
+</div>
