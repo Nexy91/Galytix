@@ -1,1 +1,5 @@
-<smart-table [data]="countriesDB" [columns]="columns"></smart-table>
+<smart-table 
+  [data]="countriesDB" 
+  [columns]="columns"
+  (rowSelected)="rowSelected($event);">
+</smart-table>

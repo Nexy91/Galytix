@@ -1,9 +1,10 @@
+import { SelectCountry } from '@app/shared/store/countries.actions';
 import { CountriesState } from '@app/shared/store/countries.state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ICountry } from './interfaces/country.interface';
 import { Observable, Subject, takeUntil } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
 import { Columns } from 'ngx-easy-table';
-import { Select } from '@ngxs/store';
 
 @Component({
   selector: 'app-countries',
@@ -16,6 +17,8 @@ export class CountriesComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
   public countriesDB: ICountry[] = [];
   public columns: Columns[] = [];
+
+  constructor(private _store: Store) {}
 
   public ngOnInit(): void {
     // This is just example to show subscription on selector. Observable can be pass true .html with async pipe as well.
@@ -42,5 +45,9 @@ export class CountriesComponent implements OnInit, OnDestroy {
   public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  public rowSelected(country: ICountry): void {
+    this._store.dispatch(new SelectCountry(country));
   }
 }
