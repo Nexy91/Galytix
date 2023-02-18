@@ -1,11 +1,11 @@
-import { SelectCountry } from '@app/shared/store/countries/countries.actions';
-import { CountriesState } from '@app/shared/store/countries/countries.state';
+import { SelectCountry } from '@app/features/countries/store/countries.actions';
+import { CountriesState } from '@app/features/countries/store/countries.state';
+import { GetWeather } from '@app/features/weather/store/weather.actions';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ICountry } from './interfaces/country.interface';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { Columns } from 'ngx-easy-table';
-import { GetWeather } from '@app/shared/store/weather/weather.actions';
 
 @Component({
   selector: 'app-countries',
