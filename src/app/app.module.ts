@@ -10,9 +10,9 @@ import { NgModule } from '@angular/core';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { CountriesState } from './shared/store/countries/countries.state';
+import { CountriesState } from './features/countries/store/countries.state';
 import { HttpClientModule } from '@angular/common/http';
-import { WeatherState } from './shared/store/weather/weather.state';
+import { WeatherState } from './features/weather/store/weather.state';
 
 @NgModule({
   declarations: [AppComponent],

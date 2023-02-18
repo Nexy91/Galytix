@@ -1,4 +1,4 @@
-import { WeatherState } from '@app/shared/store/weather/weather.state';
+import { WeatherState } from '@app/features/weather/store/weather.state';
 import { IWeather } from './interfaces/weather.interface';
 import { Component } from '@angular/core';
 import { Select } from '@ngxs/store';
