@@ -4,11 +4,11 @@ import { DialogComponent } from '../components/dialog/dialog.component';
 import { MultiSwitchCasePipe } from '../pipes/multi-switch-case.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CommonModule, TitleCasePipe } from '@angular/common';
 import { SafeURLPipe } from '@shared/pipes/safe-url.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from './material.module';
-import { CommonModule } from '@angular/common';
 import { TableModule } from 'ngx-easy-table';
 import { NgModule } from '@angular/core';
 
@@ -47,6 +47,7 @@ import { NgModule } from '@angular/core';
     // Pipes
     MultiSwitchCasePipe,
     SafeURLPipe,
+    TitleCasePipe,
   ],
 })
 export class SharedModule {}
