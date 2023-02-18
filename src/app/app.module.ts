@@ -10,6 +10,8 @@ import { NgModule } from '@angular/core';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
+import { CountriesState } from './shared/store/countries.state';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,9 +19,10 @@ import { NgxsModule } from '@ngxs/store';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([CountriesState]),
     NgxsLoggerPluginModule.forRoot({
       disabled: !environment.ngsxLogging,
     }),

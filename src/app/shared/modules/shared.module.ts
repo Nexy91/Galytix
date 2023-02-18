@@ -31,7 +31,6 @@ import { NgModule } from '@angular/core';
     TableModule,
     MatSnackBarModule,
     TranslateModule,
-    HttpClientModule,
   ],
   exports: [
     // Components

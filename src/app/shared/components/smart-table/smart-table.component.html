@@ -1,6 +1,6 @@
 <ng-container *ngIf="configuration">
       <ngx-table [configuration]="configuration"
-      [data]="data"
+      [data]="dataSource"
       [columns]="columns"
       (event)="selected($event.value.row)">
     </ngx-table>
