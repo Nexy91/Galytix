@@ -21,6 +21,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
   public weather: IWeather | undefined;
   private destroy$: Subject<void> = new Subject();
   public geoLocation: IGeoLocation | undefined;
+  public metricImperial: boolean = true;
 
   constructor(private _store: Store, private _router: Router) {}
 
@@ -28,11 +29,13 @@ export class WeatherComponent implements OnInit, OnDestroy {
     this.date = new Date();
 
     this.weather$?.pipe(takeUntil(this.destroy$)).subscribe((x: IWeather) => {
-      this.weather = x;
-      this.geoLocation = {
-        Latitude: x.coord.lat,
-        Longitude: x.coord.lon,
-      };
+      if (x?.coord) {
+        this.weather = x;
+        this.geoLocation = {
+          Latitude: x.coord.lat,
+          Longitude: x.coord.lon,
+        };
+      }
     });
   }
 

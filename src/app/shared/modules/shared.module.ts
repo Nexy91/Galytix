@@ -6,9 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { SafeURLPipe } from '@shared/pipes/safe-url.pipe';
-import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from './material.module';
+import { MetricPipe } from '../pipes/metric.pipe';
 import { TableModule } from 'ngx-easy-table';
 import { NgModule } from '@angular/core';
 
@@ -22,6 +22,7 @@ import { NgModule } from '@angular/core';
     // Pipes
     MultiSwitchCasePipe,
     SafeURLPipe,
+    MetricPipe,
   ],
   imports: [
     CommonModule,
@@ -47,6 +48,7 @@ import { NgModule } from '@angular/core';
     MultiSwitchCasePipe,
     SafeURLPipe,
     TitleCasePipe,
+    MetricPipe,
   ],
 })
 export class SharedModule {}

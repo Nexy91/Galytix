@@ -162,6 +162,20 @@ body {
   .week-container{
     padding-left: 30px;
     padding-right: 25px;
+
+    .metric{
+      display: flex;
+      justify-content: space-between;
+      color: gray;
+
+      div{
+        cursor: pointer;
+      }
+
+      .selected {
+        color: white;
+      }
+    }
   }
   
   .week-list {
